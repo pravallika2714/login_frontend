@@ -1,0 +1,68 @@
+* { box-sizing: border-box; }
+body, html {
+  height: 100%; margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #f8ecec, #fef9f5);
+  overflow-x: hidden;
+}
+.floating-icon {
+  position: absolute; width: 48px; height: 48px;
+  background: url('https://cdn-icons-png.flaticon.com/512/29/29302.png') no-repeat center;
+  background-size: contain; opacity: 0.05;
+  animation: floatUp 30s linear infinite; z-index: 0;
+}
+@keyframes floatUp {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0.05; }
+  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0.1; }
+}
+.floating-icon:nth-child(1) { left: 5%; animation-delay: 0s; }
+.floating-icon:nth-child(2) { left: 20%; animation-delay: 4s; }
+.floating-icon:nth-child(3) { left: 45%; animation-delay: 2s; }
+.floating-icon:nth-child(4) { left: 65%; animation-delay: 3s; }
+.floating-icon:nth-child(5) { left: 85%; animation-delay: 1s; }
+
+.container {
+  position: relative; z-index: 2;
+  background: #fffdfb; border-radius: 20px;
+  padding: 50px 40px; width: 100%; max-width: 400px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  margin: auto; margin-top: 10vh;
+}
+h2 {
+  color: #5c415d; margin-bottom: 30px;
+  font-weight: 700; text-align: center;
+}
+.form-control {
+  background: #f9f6f4; border: 1px solid #d8cfc8;
+  border-radius: 10px; padding: 12px; font-size: 15px;
+  color: #3d3d3d; transition: all 0.3s ease;
+}
+.form-control:focus {
+  border-color: #a8928e;
+  box-shadow: 0 0 0 3px rgba(172, 142, 150, 0.2);
+}
+.btn-login {
+  background: #6b4065; color: white;
+  border: none; border-radius: 10px;
+  padding: 12px; margin-top: 10px;
+  font-weight: 500; transition: 0.3s ease;
+}
+.btn-login:hover { background: #583050; }
+
+.link, .error-message {
+  font-size: 14px; color: #7a6c5c;
+  text-align: center; margin-top: 15px;
+}
+.link a { color: #6b4065; text-decoration: none; font-weight: 500; }
+.link a:hover { text-decoration: underline; }
+
+.error-message {
+  color: #d9534f; display: none;
+}
+.dashboard {
+  display: none; text-align: center;
+  margin-top: 50px; font-size: 18px;
+}
+@media (max-width: 480px) {
+  .container { padding: 35px 25px; }
+}
